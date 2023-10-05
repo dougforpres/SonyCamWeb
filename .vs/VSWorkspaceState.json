@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\camera",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\camera",
+    "\\src\\app\\components\\camera\\property",
+    "\\src\\app\\components\\device",
+    "\\src\\app\\models",
+    "\\src\\app\\models\\camera"
+  ],
+  "PreviewInSolutionExplorer": false
+}

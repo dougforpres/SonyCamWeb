@@ -1,0 +1,22 @@
+.device
+{
+    padding: 8px;
+    border: 1px solid;
+    margin: 4px;
+}
+
+.device .imagePreview
+{
+    width: 256px;
+    padding: 4px;
+}
+
+.previewContainer
+{
+    display: flex;
+}
+
+.previewContainer img
+{
+    float: right;
+}

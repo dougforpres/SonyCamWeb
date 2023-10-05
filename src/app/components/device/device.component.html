@@ -1,0 +1,38 @@
+<div>
+  <div class="propertyList">
+    <div class="property">
+      <span class="propertyLabel">Model</span>
+      <span class="propertyValue">{{device.model}}</span>
+    </div>
+    <div class="property">
+      <span class="propertyLabel">Manufacturer</span>
+      <span class="propertyValue">{{device.manufacturer}}</span>
+    </div>
+  </div>
+  <div>
+    <div>
+<!--      <button *ngIf="!device.handle" (click)="open()" class="btn">Connect</button>
+      <button *ngIf="device.handle" (click)="close()" class="btn">Disconnect</button>
+-->
+      <button (click)="device.handle ? close() : open()" class="btn">{{device.handle ? "Disconnect" : "Connect"}}</button>
+      <span *ngIf="device.handle">
+        &nbsp;
+        <button *ngIf="previewRunning" (click)="stopPreview()" class="btn">Stop Preview</button>
+        <button *ngIf="!previewRunning" (click)="startPreview()" class="btn">Start Preview</button>
+        <span class="previewContainer">
+          <img *ngIf="previewImage" src="data:image/jpeg;base64,{{previewImage.data}}" class="flex-none w-48 mb-10 relative z-10 before:absolute before:top-1 before:left-1 before:w-full before:h-full before:bg-teal-400" />
+        </span>
+      </span>
+    </div>
+
+    <!-- Properties -->
+    <div *ngIf="device.properties">
+      Properties
+      <div class="propertyList">
+        <div *ngFor="let property of device.properties | keyvalue">
+          <app-cameraproperty [property]="property.value" [descriptors]="device.propertyDescriptors" [lastUpdated]="propertyMap.get(property.key)"></app-cameraproperty>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

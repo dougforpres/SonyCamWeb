@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@import '@animxyz/core';
+
+/* address small thead core/utilities selectors */
+@include xyz-all;
+
+.btn {
+  @apply bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg;
+}
+
+.deviceList {
+  @apply grid grid-cols-1 gap-1 px-2 w-full;
+}
+
+.propertyList {
+  @apply grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-1 px-2 w-full h-full;
+}
+
+.property {
+  @apply flex flex-col items-start justify-center rounded-2xl bg-clip-border px-3 py-4 drop-shadow-md;
+  background-color: white;
+  transition: background-color 2.5s ease-in-out;
+}
+
+.property.xyz-in {
+  background-color: #d1dbfa;
+}
+
+@keyframes xyz-in {
+  5% {
+    background-color: #d1dbfa;
+  }
+
+  30% {
+      background-color: #d1dbfa;
+  }
+}
+
+.property:hover {
+  @apply drop-shadow-xl;
+}
+
+.propertyLabel {
+  @apply text-sm text-gray-600;
+}
+
+.propertyValue {
+  @apply text-base font-semibold text-indigo-700;
+}
+
+.propertyMeta {
+  @apply text-sm font-thin text-gray-800;
+}
+
+@tailwind utilities;

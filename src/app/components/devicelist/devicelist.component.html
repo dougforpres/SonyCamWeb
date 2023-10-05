@@ -1,0 +1,6 @@
+<h2 class="text-3xl font-bold underline">Choose a device to connect to</h2>
+<div class="deviceList" *ngIf="devices">
+  <div *ngFor="let device of devices">
+    <app-device [device]="device"></app-device>
+  </div>
+</div>
